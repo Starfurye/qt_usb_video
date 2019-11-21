@@ -4,11 +4,35 @@
 
 
 
+### 功能说明
+
+`inputdialog`：输入患者信息
+
+`mainwindow`：程序主界面
+
+`modifydialog`：编辑患者信息
+
+`qcustomplot`：用于RGB均值的实时动态曲线绘制
+
+`qextserialbase`, `qextserialport`, `win_qextserialport`：用于串口通信
+
+`scenewindow`：openGL相关图形显示
+
+`updatedialog`：修改患者信息
+
+
+
+![串口通信](https://imgur.com/RybdIvG)
+
+
+
 ### Dependence
 
 Qt 5.12.*
 
 OpenCV 4.0.1
+
+Sqlite 3
 
 
 
