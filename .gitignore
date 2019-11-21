@@ -1,0 +1,7 @@
+bulkloop/
+freeglut/
+opencv2/
+shader/
+*.dll
+*.[l|L]ib
+*.pro.user
