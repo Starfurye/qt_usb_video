@@ -22,9 +22,6 @@
 
 
 
-![串口通信](https://imgur.com/RybdIvG)
-
-
 
 ### Dependence
 
