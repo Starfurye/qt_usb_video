@@ -1,4 +1,4 @@
-#include "updatedialog.h"
+﻿#include "updatedialog.h"
 #include "ui_updatedialog.h"
 #include <QDebug>
 #include <QSqlDatabase>
@@ -15,7 +15,7 @@ updateDialog::updateDialog(QWidget *parent) :
     ui(new Ui::updateDialog)
 {
     ui->setupUi(this);
-    setWindowTitle("update patient info");
+    setWindowTitle(QStringLiteral("更新患者信息"));
     ui->buttonGroup->setId(ui->radioButton, 0);
     ui->buttonGroup->setId(ui->radioButton_2, 1);
     ui->radioButton->setChecked(true);
@@ -53,7 +53,7 @@ void updateDialog::on_pushButton_clicked()
     }
     else
     {
-        QMessageBox::about(NULL,"提示","更新成功");
+        QMessageBox::about(nullptr,QStringLiteral("提示"),QStringLiteral("更新成功"));
     }
 
     emit sendsignal();

@@ -1,19 +1,19 @@
-#include "inputdialog.h"
+﻿#include "inputdialog.h"
 #include "ui_inputdialog.h"
 #include <QDebug>
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
 
-QString addName,addAge,addID;
-int addSex;
+static QString addName,addAge,addID;
+static int addSex;
 
 inputDialog::inputDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::inputDialog)
 {
     ui->setupUi(this);
-    setWindowTitle("input patient info");
+    setWindowTitle(QStringLiteral("输入患者信息"));
     ui->buttonGroup->setId(ui->radioButton, 0);
     ui->buttonGroup->setId(ui->radioButton_2, 1);
     ui->radioButton->setChecked(true);

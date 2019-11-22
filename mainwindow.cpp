@@ -1,4 +1,4 @@
-#include "mainwindow.hpp"
+﻿#include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 #include "inputdialog.h"
 
@@ -147,7 +147,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ///// USB3
     CCyFX3Device *m_usbDevice = new CCyFX3Device();
-    FX3_FWDWNLOAD_ERROR_CODE dwld_status = FAILED;
+    // FX3_FWDWNLOAD_ERROR_CODE dwld_status = FAILED;
     // CCyUSBEndPoint类主要负责对USB端点进行操作，包含获取和设置USB端点的各种描述符和进行数据传输等；
     // CCyBulkEndPoint类主要负责完成USB块传输操作，包含对USB块传输端点的读写操作函数；
     CCyBulkEndPoint *BulkInEpt = nullptr;

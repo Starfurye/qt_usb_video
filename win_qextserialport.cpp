@@ -1,4 +1,4 @@
-//#include <stdio.h>
+﻿//#include <stdio.h>
 //#include <Process.h>
 //#include <QCoreApplication>
 //#include <QEvent>
@@ -119,7 +119,7 @@ void Win_QextSerialPort::init()
 	overlap.InternalHigh = 0;
 	overlap.Offset = 0;
 	overlap.OffsetHigh = 0;
-	overlap.hEvent = CreateEvent(NULL, true, false, NULL);
+    overlap.hEvent = CreateEvent(nullptr, true, false, nullptr);
 	overlapThread = new Win_QextSerialThread(this);
 	bytesToWriteLock = new QReadWriteLock;
 }
@@ -185,7 +185,7 @@ bool Win_QextSerialPort::open(OpenMode mode) {
     if (!isOpen()) {
         /*open the port*/
         Win_Handle=CreateFileA(port.toLatin1(), GENERIC_READ|GENERIC_WRITE,
-                              FILE_SHARE_READ|FILE_SHARE_WRITE, NULL, OPEN_EXISTING, dwFlagsAndAttributes, NULL);
+                              FILE_SHARE_READ|FILE_SHARE_WRITE, nullptr, OPEN_EXISTING, dwFlagsAndAttributes, nullptr);
         if (Win_Handle!=INVALID_HANDLE_VALUE) {
             /*configure port settings*/
             GetCommConfig(Win_Handle, &Win_CommConfig, &confSize);
@@ -362,7 +362,7 @@ qint64 Win_QextSerialPort::readData(char *data, qint64 maxSize)
 		overlapRead.InternalHigh = 0;
 		overlapRead.Offset = 0;
 		overlapRead.OffsetHigh = 0;
-		overlapRead.hEvent = CreateEvent(NULL, true, false, NULL);
+        overlapRead.hEvent = CreateEvent(nullptr, true, false, nullptr);
 		if (!ReadFile(Win_Handle, (void*)data, (DWORD)maxSize, & retVal, & overlapRead)) {
 			if (GetLastError() == ERROR_IO_PENDING)
 				GetOverlappedResult(Win_Handle, & overlapRead, & retVal, true);
@@ -372,7 +372,7 @@ qint64 Win_QextSerialPort::readData(char *data, qint64 maxSize)
 			}
 		}
 		CloseHandle(overlapRead.hEvent);
-	} else if (!ReadFile(Win_Handle, (void*)data, (DWORD)maxSize, & retVal, NULL)) {
+    } else if (!ReadFile(Win_Handle, (void*)data, (DWORD)maxSize, & retVal, nullptr)) {
         lastErr = E_READ_FAILED;
         retVal = (DWORD)-1;
     }
@@ -406,13 +406,13 @@ qint64 Win_QextSerialPort::writeData(const char *data, qint64 maxSize)
 		overlapWrite.InternalHigh = 0;
 		overlapWrite.Offset = 0;
 		overlapWrite.OffsetHigh = 0;
-		overlapWrite.hEvent = CreateEvent(NULL, true, false, NULL);
+        overlapWrite.hEvent = CreateEvent(nullptr, true, false, nullptr);
 		if (!WriteFile(Win_Handle, (void*)data, (DWORD)maxSize, & retVal, & overlapWrite)) {
-			lastErr = E_WRITE_FAILED;
+            lastErr = E_WRITE_FAILED;
 			retVal = (DWORD)-1;
 	   	} else
 	   		retVal = maxSize;
-    } else if (!WriteFile(Win_Handle, (void*)data, (DWORD)maxSize, & retVal, NULL)) {
+    } else if (!WriteFile(Win_Handle, (void*)data, (DWORD)maxSize, & retVal, nullptr)) {
 		lastErr = E_WRITE_FAILED;
 		retVal = (DWORD)-1;
    	}

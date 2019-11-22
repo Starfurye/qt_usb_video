@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_HPP
+﻿#ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
 #include <iostream>
