@@ -190,6 +190,9 @@ MainWindow::MainWindow(QWidget *parent) :
             BulkOutEpt = (CCyBulkEndPoint *) m_usbDevice->EndPoints[i];
     }
 
+    // 列出所有信息
+    connect(ui->action, SIGNAL(triggered()), this, SLOT(on_action_triggered));
+
 
     /*if (USBDevice->bHighSpeed)
     {
@@ -545,4 +548,12 @@ void MainWindow::on_action_4_triggered()
     mddialog->setModal(true);
     mddialog->show();
 
+}
+
+void MainWindow::on_action_triggered()
+{
+    alldialog = new getallDialog;
+
+    alldialog->setModal(true);
+    alldialog->show();
 }

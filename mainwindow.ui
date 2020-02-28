@@ -519,6 +519,7 @@
     <addaction name="separator"/>
     <addaction name="action_3"/>
     <addaction name="action_4"/>
+    <addaction name="action"/>
    </widget>
    <widget class="QMenu" name="menu4_7_LPI">
     <property name="title">
@@ -556,6 +557,11 @@
   <action name="action_5">
    <property name="text">
     <string>删除信息</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>列出所有信息</string>
    </property>
   </action>
  </widget>

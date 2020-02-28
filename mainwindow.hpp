@@ -34,6 +34,7 @@
 
 #include "inputdialog.h"
 #include "modifydialog.h"
+#include "getalldialog.h"
 #include "qcustomplot.h"
 
 namespace Ui {
@@ -63,6 +64,7 @@ private:
 
     inputDialog *dialog;
     modifyDialog *mddialog;
+    getallDialog *alldialog;
 
     cv::Mat frame;
     cv::VideoCapture capture;
@@ -94,6 +96,7 @@ private slots:
 
     void on_action_3_triggered();
     void on_action_4_triggered();
+    void on_action_triggered();
 
     void on_openButton_clicked();
     void on_closeButton_clicked();

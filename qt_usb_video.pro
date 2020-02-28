@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     inputdialog.cpp \
     modifydialog.cpp \
     updatedialog.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    getalldialog.cpp
 
 HEADERS  += mainwindow.hpp \
     qextserialbase.h \
@@ -35,12 +36,14 @@ HEADERS  += mainwindow.hpp \
     inputdialog.h \
     modifydialog.h \
     updatedialog.h \
-    qcustomplot.h
+    qcustomplot.h \
+    getalldialog.h
 
 FORMS    += mainwindow.ui \
     inputdialog.ui \
     modifydialog.ui \
-    updatedialog.ui
+    updatedialog.ui \
+    getalldialog.ui
 
 LIBS += -lopengl32  -lglu32
 

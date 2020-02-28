@@ -4,6 +4,7 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QMessageBox>
 
 static QString addName,addAge,addID;
 static int addSex;
@@ -49,11 +50,23 @@ void inputDialog::on_pushButton_clicked()
     QString insert_sql = "insert into qtusb values (?, ?, ?, ?)";
     sql_query.prepare(insert_sql);
     addName = ui->textEdit->toPlainText();
+    if (addName == "") {
+        QMessageBox::critical(nullptr, QStringLiteral("错误"), QStringLiteral("请输入患者姓名"), QMessageBox::Ok);
+        return;
+    }
     sql_query.addBindValue(addName);           // insert name
     sql_query.addBindValue(addSex);             // insert sex, male: 0, female: 1
     addAge = ui->spinBox->text();
+    if (addAge == "") {
+        QMessageBox::critical(nullptr, QStringLiteral("错误"), QStringLiteral("请输入患者年龄"), QMessageBox::Ok);
+        return;
+    }
     sql_query.addBindValue(addAge.toInt());      // insert age
     addID = ui->textEdit_3->toPlainText();
+    if (addID == "" || addID.size() != 18) {
+        QMessageBox::critical(nullptr, QStringLiteral("错误"), QStringLiteral("请输入正确的18位身份证号"), QMessageBox::Ok);
+        return;
+    }
     sql_query.addBindValue(addID);              // insert id
 
     if(!sql_query.exec())
