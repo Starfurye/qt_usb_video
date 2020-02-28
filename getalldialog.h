@@ -1,4 +1,4 @@
-#ifndef GETALLDIALOG_H
+﻿#ifndef GETALLDIALOG_H
 #define GETALLDIALOG_H
 
 #include <QDialog>
@@ -14,6 +14,9 @@ class getallDialog : public QDialog
 public:
     explicit getallDialog(QWidget *parent = nullptr);
     ~getallDialog();
+
+private slots:
+    void on_pushButton_released();
 
 private:
     Ui::getallDialog *ui;

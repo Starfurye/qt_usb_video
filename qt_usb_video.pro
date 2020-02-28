@@ -7,6 +7,7 @@
 QT       += core gui
 QT       += core gui printsupport
 QT       += core gui opengl
+QT       += core gui axcontainer
 QT       += widgets
 QT       += sql
 
